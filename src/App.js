@@ -42,9 +42,9 @@ function App() {
       <h2>IronContacts</h2>
     </div>
     <div>
-      <button onClick={addRandom}>Add Random Contact</button>
-      <button onClick={byPopularity}>Sort by popularity</button>
-      <button onClick={byName}>Sort by name</button>
+      <button className="header-btn" onClick={addRandom}>Add Random Contact</button>
+      <button className="header-btn" onClick={byPopularity}>Sort by popularity</button>
+      <button className="header-btn" onClick={byName}>Sort by name</button>
     </div>
       <table>
         <thead>
@@ -74,7 +74,7 @@ function App() {
                 <td> {contact.popularity}</td>
                 <td>{contact.wonOscar ? "🏆" : "X"}</td>
                 <td>{contact.wonEmmy ? "🏆" : "X"}</td>
-                <td><button onClick={() => deleteContact(contact.id)}>Delete</button></td>
+                <td><button className="delete-btn" onClick={() => deleteContact(contact.id)}>Delete</button></td>
               </tr>
             );
           })}
