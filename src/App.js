@@ -1,17 +1,17 @@
 // src/App.js
 import "./App.css";
-import actorsList from "./contacts.json";
+import contactList from "./contacts.json";
 import { useState } from "react";
 
 function App() {
-  const initContacts = actorsList.splice(0, 5);
-  const [actors, setList] = useState(initContacts);
-  const [outRemaining, setOutRemaining] = useState(actorsList);
+  const initContacts = contactList.splice(0, 5);
+  const [contacts, setList] = useState(initContacts);
+  const [outRemaining, setOutRemaining] = useState(contactList);
    
   function addRandom() {
     if (outRemaining && outRemaining.length > 0) {
       let index = Math.floor(Math.random() * (outRemaining.length - 0) + 0);
-      setList([...actors, outRemaining[index]]);
+      setList([...contacts, outRemaining[index]]);
       let filtered = outRemaining.filter((contact, i) => {
         return i !== index;
       });
@@ -20,18 +20,18 @@ function App() {
   }
 
   function byPopularity() {
-    actors.sort((a, b) => b.popularity - a.popularity)
-    setList([...actors]);
+    contacts.sort((a, b) => b.popularity - a.popularity)
+    setList([...contacts]);
   }
 
   function byName() {
-    actors.sort((a, b) => a.name.localeCompare(b.name))
-    setList([...actors]);
+    contacts.sort((a, b) => a.name.localeCompare(b.name))
+    setList([...contacts]);
   }
 
   const deleteContact = contactId => {
-    const filteredContacts = actors.filter(actor => {
-      return actor.id !== contactId
+    const filteredContacts = contacts.filter(contact => {
+      return contact.id !== contactId
     });
     setList(filteredContacts);
   }
@@ -58,23 +58,23 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          {actors.map((actor) => {
+          {contacts.map((contact) => {
             return (
               <tr>
                 <td>
                   {" "}
                   <img
-                    src={actor.pictureUrl}
+                    src={contact.pictureUrl}
                     width="80px"
                     height="100px"
-                    alt="actorphoto"
+                    alt="contactphoto"
                   />{" "}
                 </td>
-                <td> {actor.name} </td>
-                <td> {actor.popularity}</td>
-                <td>{actor.wonOscar ? "🏆" : "X"}</td>
-                <td>{actor.wonEmmy ? "🏆" : "X"}</td>
-                <td><button onClick={() => deleteContact(actor.id)}>Delete</button></td>
+                <td> {contact.name} </td>
+                <td> {contact.popularity}</td>
+                <td>{contact.wonOscar ? "🏆" : "X"}</td>
+                <td>{contact.wonEmmy ? "🏆" : "X"}</td>
+                <td><button onClick={() => deleteContact(contact.id)}>Delete</button></td>
               </tr>
             );
           })}
