@@ -39,9 +39,9 @@ function App() {
   return (
     <div className="App">
     <div>
-      <h2>IronContacts</h2>
+    <a href="https://picasion.com/gl/f7lX/"><img src="https://i.picasion.com/gl/91/f7lX.gif" width="442" height="41" border="0" alt="https://picasion.com/gl/f7lX/" /></a><br />
     </div>
-    <div>
+    <div className="header-btns">
       <button className="header-btn" onClick={addRandom}>Add Random Contact</button>
       <button className="header-btn" onClick={byPopularity}>Sort by popularity</button>
       <button className="header-btn" onClick={byName}>Sort by name</button>
@@ -64,6 +64,7 @@ function App() {
                 <td>
                   {" "}
                   <img
+                    className="Celeb-img"
                     src={contact.pictureUrl}
                     width="80px"
                     height="100px"

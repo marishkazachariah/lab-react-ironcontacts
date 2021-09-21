@@ -12,12 +12,40 @@ table {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   margin-left: auto;
   margin-right: auto;
+  border-radius: 15px;
+  overflow:hidden
+}
+table td {
+  padding: 5px;
+  border-left: 1px solid #c3c3c3;
+  border-right: 1px solid #c3c3c3;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #c3c3c3;
 }
 
 table thead tr {
   background-color: #009879;
   color: #ffffff;
   text-align: center;
+  padding:5px;
+}
+
+.delete-btn {
+  position: relative;
+  margin-right: 20px;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #fff;
+  background: #fd3535;
+  border-radius: 4px;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  border: solid 2px #ffa6ab;
+  margin-left: 20px;
 }
 
 .header-btn {
@@ -32,6 +60,11 @@ table thead tr {
     inset 0 -2px 0 rgba(0, 0, 0, 0.05);
   font-weight: bold;
   border: solid 2px #d27d00;
+  margin-left: 20px;
+}
+
+.Celeb-img {
+  border: 5px solid #555;
 }
 
 .App {
